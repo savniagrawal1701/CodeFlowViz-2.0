@@ -8,16 +8,16 @@ export default function HomePage() {
           <p className="eyebrow">CodeFlowViz 2.0</p>
           <h1>Execution Cockpit</h1>
         </div>
-        <div className="status">Void Theme · Monaco Ready</div>
+        <div className="status">Void Theme · Sandbox Ready</div>
       </header>
 
       <section className="workspace">
         <aside className="panel left">
           <h2>Flow Controls</h2>
-          <button>Run</button>
-          <button>Step Into</button>
-          <button>Step Over</button>
-          <button>Reset</button>
+          <p>Execute JavaScript in a constrained backend worker with CPU and memory guardrails.</p>
+          <button disabled>Step Into</button>
+          <button disabled>Step Over</button>
+          <button disabled>Reset</button>
         </aside>
 
         <section className="panel editor">
@@ -29,7 +29,7 @@ export default function HomePage() {
 
         <aside className="panel right">
           <h2>Runtime Introspection</h2>
-          <p>Variable watch and call stack panels will appear in Phase 2.</p>
+          <p>Sandbox results, console logs, errors, and timeout status stream back from the execution API.</p>
         </aside>
       </section>
     </main>
