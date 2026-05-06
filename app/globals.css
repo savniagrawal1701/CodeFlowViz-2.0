@@ -97,3 +97,88 @@ button {
   flex: 1;
   min-height: 0;
 }
+
+.codeRunner {
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(320px, 1fr) minmax(150px, 0.35fr);
+}
+
+.runnerToolbar,
+.outputHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #1f2f50;
+  background: #091020;
+  color: #9fb8ea;
+  font-size: 0.82rem;
+  padding: 0.7rem 1rem;
+}
+
+.primaryAction {
+  border-color: #4f83d8;
+  background: linear-gradient(180deg, #1b4a86, #16325c);
+  box-shadow: 0 0 22px #2c74cf33;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: center;
+}
+
+.primaryAction:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.monacoPane {
+  min-height: 0;
+}
+
+.outputPane {
+  min-height: 0;
+  border-top: 1px solid #1f2f50;
+  background: #070d19;
+  overflow: auto;
+}
+
+.outputPane.success {
+  box-shadow: inset 3px 0 0 #5fd28d;
+}
+
+.outputPane.failure {
+  box-shadow: inset 3px 0 0 #ff6b7d;
+}
+
+.outputPane p,
+.outputBody {
+  margin: 0;
+  padding: 1rem;
+}
+
+.outputBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.outputBody pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.errorText {
+  color: #ff9aaa;
+}
+
+.logList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: #b8c9ee;
+}
