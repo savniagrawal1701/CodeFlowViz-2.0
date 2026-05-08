@@ -253,3 +253,91 @@ button {
   color: #7186ad;
   font-size: 0.82rem;
 }
+
+.scrubberPanel,
+.inspectorPanel {
+  border: 1px solid #1d3358;
+  background: #091121;
+  border-radius: 12px;
+  padding: 0.8rem;
+}
+
+.scrubberPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.scrubberMeta,
+.inspectorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: #9fb8ea;
+  font-size: 0.82rem;
+}
+
+.scrubberMeta strong,
+.inspectorHeader h3 {
+  color: #d7e4f8;
+}
+
+.inspectorHeader h3 {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.snapshotScrubber {
+  width: 100%;
+  accent-color: #70a7ff;
+  cursor: pointer;
+}
+
+.variableTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.65rem;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.variableTable th,
+.variableTable td {
+  border-top: 1px solid #1d3358;
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.variableTable thead th {
+  border-top: 0;
+  background: #0c1a32;
+  color: #9fb8ea;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.variableTable tbody th {
+  color: #d7e4f8;
+  font-family: JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 700;
+}
+
+.variableTable td {
+  color: #b8c9ee;
+}
+
+.variableTable code {
+  color: #d7e4f8;
+  font-family: JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.emptyInspector {
+  color: #7186ad;
+  font-style: italic;
+  text-align: center !important;
+}
