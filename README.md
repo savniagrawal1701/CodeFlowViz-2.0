@@ -179,6 +179,15 @@ Expected response:
 - **Custom cockpit layouts** — Persisted panels for architecture reviews, demos, and debugging workflows.
 - **Expanded sandbox policies** — More granular limits for memory, execution time, and API access.
 
+
+## Open Source Program Context
+
+This repository is prepared for **GirlScript Summer of Code (GSSoC)** contributions and mentoring workflows.
+
+> Note: **GSSoC** refers to **GirlScript Summer of Code**, not Google Summer of Code (GSoC).
+
+If you are contributing through GSSoC, please mention the relevant issue number and program context in your pull request description so maintainers can track contributions accurately.
+
 ## Contributing
 
 Contributions are welcome. If you care about debuggers, visualization, language tooling, developer education, or high-performance UI systems, there is room to help.
