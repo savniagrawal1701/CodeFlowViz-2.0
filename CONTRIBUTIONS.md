@@ -1,74 +1,4 @@
-# CodeFlowViz 2.0
-
-<p align="center">
-  <strong>Visualize JavaScript execution as a real-time cockpit: line-by-line flow, variable state, and replayable runtime telemetry for architects and engineers.</strong>
-</p>
-
-<p align="center">
-  <a href="https://code-flow-viz-2-0.vercel.app"><strong>Launch the live Vercel deployment →</strong></a>
-</p>
-
-<p align="center">
-  <img alt="Next.js 14" src="https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=nextdotjs" />
-  <img alt="Node.js" src="https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-  <img alt="AST Tracing" src="https://img.shields.io/badge/AST-Tracing-7C3AED?style=for-the-badge" />
-  <img alt="Monorepo" src="https://img.shields.io/badge/Architecture-Decoupled%20Monorepo-0EA5E9?style=for-the-badge" />
-</p>
-
----
-
-## Visual Preview
-
-> **Execution Cockpit / Void design system preview**  
-> Replace this placeholder with a production screenshot at `docs/assets/execution-cockpit-void.png` once the cockpit capture is finalized.
-
-```text
-┌────────────────────────────────────────────────────────────────────────────┐
-│ CODEFLOWVIZ EXECUTION COCKPIT · VOID                                       │
-├───────────────────────────────┬───────────────────────┬────────────────────┤
-│ Monaco Code Pane              │ Timeline / Scrubber   │ Variable Inspector │
-│  ▸ active line illumination   │  step 001 ━━━━━●────  │  value  number  6  │
-│  ▸ AST trace markers          │  step into / over/ out│  result number  8  │
-│  ▸ sandbox execution status   │  replay snapshots     │  logs   structured │
-└───────────────────────────────┴───────────────────────┴────────────────────┘
-```
-
-<!--
-![CodeFlowViz Execution Cockpit — Void design system](docs/assets/execution-cockpit-void.png)
--->
-
-## Core Features
-
-| Capability                          | Cockpit Signal                                                                                                          |
-| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| **Real-time AST Tracing**           | Instruments JavaScript syntax trees before execution to capture line-level snapshots as code runs.                      |
-| **Live Variable Inspector**         | Surfaces scoped runtime values with type badges, serialized previews, and snapshot-aware inspection.                    |
-| **Playback Scrubber**               | Replays execution history so engineers can step into, over, and out of logic flow without rerunning mental simulations. |
-| **Tonal Layering “Void” Aesthetic** | Uses high-contrast depth, restrained neon accents, and cockpit-style panels to keep dense telemetry readable.           |
-
-## Why CodeFlowViz?
-
-Traditional debuggers are powerful, but they are often optimized for local breakpoints rather than system-level comprehension. CodeFlowViz 2.0 turns execution into a navigable visual timeline, helping teams explain algorithms, review control flow, and reason about state transitions with less context switching.
-
-## The Deployment Story
-
-CodeFlowViz 2.0 is intentionally split into a decoupled monorepo:
-
-- `frontend/` runs the cockpit UI as a Next.js 14 application, optimized for Vercel delivery.
-- `backend/` runs the Express execution service in a long-lived Node.js environment, designed for Railway or a comparable host.
-
-This separation solves a practical production constraint: sandboxed code tracing can exceed short serverless execution windows. By moving AST instrumentation and worker-thread execution to Railway while keeping the interface on Vercel, the project preserves a fast frontend deployment path without forcing the execution engine into serverless timeout limits.
-
-## Architecture
-
-```text
-┌────────────────────────────┐       HTTPS        ┌─────────────────────────────┐
-│ Frontend · Vercel          │ ─────────────────▶ │ Backend · Railway           │
-│ Next.js 14 cockpit UI      │                    │ Node.js + Express API       │
-│ Tailwind CSS design layer  │ ◀───────────────── │ AST instrumentation sandbox │
-│ Framer Motion transitions  │    trace payloads  │ Worker-thread isolation     │
-└────────────────────────────┘                    └─────────────────────────────┘
-```
+# Contribution guidelines for CodeFlowViz 2.0
 
 ### Technology Stack
 
@@ -351,6 +281,14 @@ The backend responds with trace telemetry consumed by the timeline and variable 
 - **CORS errors in browser console**: Verify `CORS_ORIGIN` exactly matches the frontend origin, including scheme and subdomain.
 - **Port binding failures on Railway**: Confirm the service uses Railway-provided `PORT` and does not hardcode `4000` in production.
 - **No trace events returned**: Inspect backend logs for parser/runtime errors; test the same snippet directly against the API with `curl`.
+
+## Note: For running in windows
+- Install concurrently package as a development dependency.
+- Run this in the root of the project:
+
+```bash
+npm install concurrently --save-dev
+```
 
 ## Roadmap
 
